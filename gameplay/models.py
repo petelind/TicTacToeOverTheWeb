@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.db.models import Q
 
 # Create your models here.
-
+from django.urls import reverse
 
 GAME_STATUS = (
     ('F', 'First Player To Move'),
@@ -47,6 +47,9 @@ class Game(models.Model):
 
     def __str__(self):
         return "{0} vs {1}".format(self.first_player, self.second_player)
+
+    def get_absolute_url(self):
+        return reverse('gameplay_detail', args=[self.id, ])
 
 
 class Move(models.Model):

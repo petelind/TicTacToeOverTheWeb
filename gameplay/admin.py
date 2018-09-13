@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Game, Move
+from gameplay.models import Game, Move
 
 # This is very basic registration with the default auto-generated view
 admin.site.register(Move)
